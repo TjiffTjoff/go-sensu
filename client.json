@@ -1,0 +1,7 @@
+{
+  "client": {
+    "name": "golang-test",
+    "address": "123.123.123.123",
+    "subscriptions": [ "test" ]
+  }
+}

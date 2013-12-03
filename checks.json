@@ -1,0 +1,16 @@
+{
+  "checks": {
+    "Random1": {
+      "handler": [ "default" ],
+      "command": "/checks/random.s 100 150",
+      "interval": 10,
+      "standalone": true
+    },
+    "Random2": {
+      "handler": [ "default" ],
+      "command": "/checks/random.sh 100 150",
+      "interval": 10,
+      "standalone": true
+    }
+  }
+}
