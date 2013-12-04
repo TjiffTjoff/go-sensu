@@ -6,26 +6,26 @@ import (
 )
 
 type CheckConf struct {
-	Handler     string
-	Command     string
-	Interval    int
-	Standalone  bool
-	Subscribers []string
-  Occurrences int
+	Handler     string    `json:"handler"`
+	Command     string    `json:"command"`
+	Interval    int       `json:"interval"`
+	Standalone  bool      `json:"standalone"`
+	Subscribers []string  `json:"subscribers"`
+  Occurrences int       `json:"occurrences"`
 }
 
 type ClientConf struct {
-	Name          string
-	Address       string
-	Subscriptions []string
+	Name          string    `json:"name"`
+	Address       string    `json:"address"`
+	Subscriptions []string  `json:"subscriptions"`
 }
 
 type RabbitmqConf struct {
-	Port     int
-	Host     string
-	User     string
-	Password string
-	Vhost    string
+	Port     int    `json:"port"`
+	Host     string `json:"host"`
+	User     string `json:"user"`
+	Password string `json:"password"`
+	Vhost    string `json:"vhost"`
 }
 
 func ParseClientConfig(file string) (ClientConf, error) {
