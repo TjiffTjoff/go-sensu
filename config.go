@@ -6,11 +6,12 @@ import (
 )
 
 type CheckConf struct {
-	Handler     []string
+	Handler     string
 	Command     string
 	Interval    int
 	Standalone  bool
 	Subscribers []string
+  Occurrences int
 }
 
 type ClientConf struct {

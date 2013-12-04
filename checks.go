@@ -10,7 +10,7 @@ import (
 )
 
 type CheckResult struct {
-	Handler     []string `json:"handler"`
+	Handler     string   `json:"handler"`
 	Command     string   `json:"command"`
 	Interval    int      `json:"interval"`
 	Subscribers []string `json:"subscribers"`
@@ -21,6 +21,7 @@ type CheckResult struct {
 	Output      string   `json:"output"`
 	Status      int      `json:"status"`
 	Duration    float32  `json:"duration"`
+  Occurrences int      `json:"occurrences"`
 }
 
 type ResultMsg struct {
@@ -58,7 +59,8 @@ func runCheck(clientName string, checkName string, checkConf CheckConf, channel 
 			Executed:    time.Now().Unix(),
 			Output:      string(output),
 			Status:      exitCode,
-			Duration:    0.0}
+			Duration:    0.0,
+      Occurrences: checkConf.Occurrences}
 
 		resultMsg := ResultMsg{
 			Client: clientName,
